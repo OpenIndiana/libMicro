@@ -37,8 +37,8 @@ static int			opta;
 typedef struct {
 	char			*ts_src;
 	char 			*ts_dest;
-	int			ts_srcsize;
-	int			ts_destsize;
+	size_t			ts_srcsize;
+	size_t			ts_destsize;
 } tsd_t;
 
 int
@@ -87,6 +87,7 @@ int
 benchmark_initworker(void *tsd)
 {
 	tsd_t			*ts = (tsd_t *)tsd;
+	size_t i;
 
 	if (optf)
 		ts->ts_srcsize = 64 * 1024 * 1024;
@@ -101,6 +102,11 @@ benchmark_initworker(void *tsd)
 
 	ts->ts_src = opta + (char *)valloc(ts->ts_srcsize);
 	ts->ts_dest = valloc(ts->ts_destsize);
+
+	for (i = 0; i < ts->ts_srcsize; i++)
+		ts->ts_src[i] = '1';
+	for (i = 0; i < ts->ts_destsize; i++)
+		ts->ts_dest[i] = '\0';
 
 	return (0);
 }
