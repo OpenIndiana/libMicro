@@ -16,6 +16,9 @@
 # Use is subject to license terms.
 #
 
+# Enforce C locale to avoid float conversion issues
+LC_NUMERIC=C
+
 #
 # output html comparison of several libmicro output data files
 # usage: multiview file1 file2 file3 file4 ...
