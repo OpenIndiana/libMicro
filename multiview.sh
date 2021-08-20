@@ -121,7 +121,7 @@ END {
 		printf("<tr>\n");
 		printf("<td>%s</td>\n", name);
 		if (a > 0)
-			printf("<td><pre>%f</pre></td>\n", a);
+			printf("<td><pre>%11.5f</pre></td>\n", a);
 		else {
 			if (a < 0)
 				printf("<td bgcolor=\"#ff0000\">%s</td>\n", "ERROR");
