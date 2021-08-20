@@ -17,7 +17,7 @@
 # Use is subject to license terms.
 #
 
-bench_version=1505
+bench_version=1901
 libmicro_version=$(bin/tattle -V | awk '{ print $1 }')
 
 case $libmicro_version in

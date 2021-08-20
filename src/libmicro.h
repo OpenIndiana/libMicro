@@ -23,7 +23,7 @@
 #include <pthread.h>
 #include <stdint.h>
 
-#define	LIBMICRO_VERSION	"1505"
+#define	LIBMICRO_VERSION	"1901"
 
 #define	STRSIZE			1024
 
